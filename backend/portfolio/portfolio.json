@@ -1,0 +1,162 @@
+{
+  "about": "MIS-trained data engineer moving into data science. I build reliable pipelines, tighten data quality, and ship ML that actually improves decisions—backed by Snowflake, AWS, and Python.",
+  "skills": [
+    {"name": "Python", "lastUsed": "2025-11", "level": "advanced", "category": "data"},
+    {"name": "SQL", "lastUsed": "2025-11", "level": "advanced", "category": "data"},
+    {"name": "Snowflake", "lastUsed": "2025-11", "level": "advanced", "category": "database"},
+    {"name": "AWS Glue", "lastUsed": "2025-05", "level": "advanced", "category": "cloud"},
+    {"name": "Amazon Redshift", "lastUsed": "2024-05", "level": "advanced", "category": "database"},
+    {"name": "dbt", "lastUsed": "2025-11", "level": "advanced", "category": "data"},
+    {"name": "Airflow", "lastUsed": "2024-05", "level": "advanced", "category": "data"},
+    {"name": "Scikit-learn", "lastUsed": "2025-11", "level": "advanced", "category": "ai"},
+    {"name": "XGBoost", "lastUsed": "2024-05", "level": "advanced", "category": "ai"},
+    {"name": "Anomaly Detection (Isolation Forest)", "lastUsed": "2025-11", "level": "advanced", "category": "ai"},
+    {"name": "Power BI", "lastUsed": "2025-11", "level": "advanced", "category": "analytics"},
+    {"name": "Azure (App Services, SQL, Monitor)", "lastUsed": "2025-05", "level": "intermediate", "category": "cloud"},
+    {"name": "ELK Stack", "lastUsed": "2025-05", "level": "intermediate", "category": "devops"},
+    {"name": "Prometheus & CloudWatch", "lastUsed": "2024-05", "level": "intermediate", "category": "devops"},
+    {"name": "Kinesis Firehose", "lastUsed": "2021-01", "level": "intermediate", "category": "cloud"},
+    {"name": "Ollama / LLaMA3", "lastUsed": "2025-11", "level": "intermediate", "category": "ai"},
+    {"name": "Flask", "lastUsed": "2024-05", "level": "intermediate", "category": "backend"}
+  ],
+  "projects": [
+    {
+      "id": "proj_grant_pred",
+      "name": "Grant Allocation Prediction",
+      "stack": ["Python", "Scikit-learn", "Pandas", "Snowflake", "dbt"],
+      "summary": "Built regression models with stratified k-fold CV to estimate grant allocation outcomes.",
+      "impact": "Precision improved from 0.37 to 0.45 via feature engineering and RMSE-tuned hyperparameters.",
+      "repo": "",
+      "demo": "",
+      "highlights": [
+        "Feature engineering on multi-source civic datasets",
+        "K-fold CV with held-out cycles for realistic validation",
+        "Deployed features to Snowflake-backed analytics"
+      ]
+    },
+    {
+      "id": "proj_anomaly_rev",
+      "name": "Revenue Anomaly Detection",
+      "stack": ["Python", "Isolation Forest", "Pandas", "Power BI"],
+      "summary": "Ensemble anomaly detection across 5D revenue signals.",
+      "impact": "False positives cut from 8% to 5.2%; triage speed up 35%.",
+      "repo": "",
+      "demo": "",
+      "highlights": [
+        "Combined z-score normalization with Isolation Forest",
+        "Explainable flags surfaced in BI for operations",
+        "Tight feedback loop with program officers"
+      ]
+    },
+    {
+      "id": "proj_xml_etl",
+      "name": "XML-to-Warehouse ETL",
+      "stack": ["Python", "lxml", "Snowflake", "dbt"],
+      "summary": "Incremental XML parsing pipeline with taxonomy normalization.",
+      "impact": "Processed 57K XML docs; QA cycle time dropped from 3h to 25m; 420 data tests added.",
+      "repo": "",
+      "demo": "",
+      "highlights": [
+        "Schema-error tagging for rapid correction",
+        "200+ taxonomy codes standardized",
+        "Automated data quality gates in dbt"
+      ]
+    },
+    {
+      "id": "proj_agentic_rag",
+      "name": "Agentic RAG with Local LLM",
+      "stack": ["LLaMA3", "Ollama", "Python", "Streamlit"],
+      "summary": "ReAct agent + RAG for local, tool-augmented document QA.",
+      "impact": "90%+ accuracy and sub-2s median response locally.",
+      "repo": "",
+      "demo": "",
+      "highlights": [
+        "Function chaining and document conversions",
+        "Lightweight retrieval with local embeddings",
+        "On-device reasoning; zero external latency"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Third Estate Ventures",
+      "role": "Data Engineer",
+      "duration": "2025-09 to present",
+      "location": "Buffalo, NY",
+      "description": "Own ML modeling, data quality, and civic analytics to guide equitable funding decisions.",
+      "achievements": [
+        "Lifted model precision 0.37 → 0.45 using stratified CV and tuned regressors",
+        "Cut anomaly false positives to 5.2% and sped up triage by 35%",
+        "Built XML ingestion to Snowflake; added 420 dbt tests; duplicates down 86%",
+        "Shipped Power BI views exposing $2.3M funding gaps for neighborhood reallocations"
+      ]
+    },
+    {
+      "company": "Third Estate Ventures",
+      "role": "Data Engineer Intern",
+      "duration": "2025-01 to 2025-05",
+      "location": "Buffalo, NY",
+      "description": "Raised system observability and reliability across Azure workloads.",
+      "achievements": [
+        "Unified Azure telemetry dashboards; anomaly detection time down 45%",
+        "Deployed ELK for real-time traces; issue triage 30% faster",
+        "Automated daily infra checks; sustained 99.5% SLA"
+      ]
+    },
+    {
+      "company": "Configit A/S",
+      "role": "Senior Data Associate",
+      "duration": "2021-02 to 2024-05",
+      "location": "Remote",
+      "description": "Scaled telemetry pipelines and forecasting to stabilize peak configuration loads.",
+      "achievements": [
+        "Processed 200M daily records; Redshift latency 180s → 125s",
+        "EMR migration cut batch runtime 8h → 2h and costs by 20%",
+        "Time-series forecasting improved peak resource allocation by 35%",
+        "Prometheus/CloudWatch reduced job failures 20 → 2; faster recovery"
+      ]
+    },
+    {
+      "company": "FactSet",
+      "role": "Data Associate",
+      "duration": "2018-12 to 2021-01",
+      "location": "Remote",
+      "description": "Delivered intraday risk data flows and entity matching at scale.",
+      "achievements": [
+        "Kinesis/Redshift ingestion for 1.2M daily positions; CPU <70%",
+        "Random forest exposures with walk-forward R²=0.87 (20-day horizon)",
+        "Airflow + Lambda reduced schema mismatch errors by 40%",
+        "Fuzzy LEI matching raised accuracy 94% → 98.6%"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University at Buffalo (SUNY)",
+      "degree": "Master of Science",
+      "field": "Management Information Systems (STEM)",
+      "graduation": "2025-05",
+      "gpa": "3.9/4.0",
+      "relevant_courses": [
+        "Predictive Modeling",
+        "Data Mining",
+        "Time-Series Forecasting",
+        "Statistical Modeling",
+        "Analytics & Visualization"
+      ]
+    },
+    {
+      "institution": "Malaviya National Institute of Technology (MNIT) Jaipur",
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science and Engineering",
+      "graduation": "2018-05",
+      "gpa": ""
+    }
+  ],
+  "certifications": [],
+  "links": {
+    "phone": "+1 716-239-3711",
+    "email": "banothvijaykumar01@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/vijaykumar353"
+  }
+}
