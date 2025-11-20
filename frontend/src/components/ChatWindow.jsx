@@ -3,7 +3,7 @@ import { AppCtx } from '../App';
 import MessageItem from './MessageItem';
 import Welcome from './Welcome';
 
-export default function ChatWindow(){
+export default function ChatWindow({ profileImage, gender }) {
   const { activeConvo, quickAsk } = useContext(AppCtx);
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
@@ -28,13 +28,19 @@ export default function ChatWindow(){
 
   if (!activeConvo) return <div className="chat-container"/>;
 
-  const showWelcome = activeConvo.messages.filter(m=>m.role==='user').length === 0;
+  const showWelcome = activeConvo.messages.filter(m => m.role === 'user').length === 0;
 
   return (
     <div className="chat-container">
       <div className="messages" id="messages">
-        {showWelcome && <Welcome onAsk={quickAsk} />}
-        {!showWelcome && activeConvo.messages.map(m=>
+        {showWelcome && (
+          <Welcome 
+            onAsk={quickAsk} 
+            profileImage={profileImage}
+            gender={gender}
+          />
+        )}
+        {!showWelcome && activeConvo.messages.map(m =>
           <MessageItem 
             key={m.id} 
             role={m.role} 
@@ -50,7 +56,7 @@ export default function ChatWindow(){
   );
 }
 
-/*  Typing indicator  */
+/* Typing indicator */
 const TypingIndicator = () => (
   <div className="typing-indicator show">
     <div className="message">

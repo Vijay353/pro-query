@@ -27,5 +27,24 @@ export function useConversations() {
     setConversations(prev => prev.map(c => (c.id === id ? { ...c, activeSection: section } : c)));
   };
 
-  return { conversations, activeId, setActiveId, newChat, append, setSection };
+ const deleteChat = (id) => {
+  setConversations(prev => {
+    const filtered = prev.filter(c => c.id !== id);
+    // ↓ always keep one stub; reuse it if it exists
+    if (filtered.length) return filtered;
+    return [{ id: crypto.randomUUID(), messages: [] }];
+  });
+
+  setActiveId(prevId => {
+    const remaining = conversations.filter(c => c.id !== id);
+    return remaining.length ? remaining[0].id : conversations[0]?.id;
+  });
+};
+
+  return { conversations, activeId, setActiveId, newChat, append, setSection, deleteChat};
+
+  
+
+
+
 }
